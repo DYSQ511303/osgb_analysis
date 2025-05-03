@@ -1,0 +1,56 @@
+// launch.json 文件用于配置 Visual Studio Code 中的调试器启动参数。
+// 它包含一个 version 字段和一个 configurations 数组，
+// configurations 数组中每个对象代表一个调试配置。
+//指定 launch.json 文件的版本，当前使用的是 0.2.0
+// type: "lldb"：指定使用的调试器类型为 lldb，这是一个跨平台的调试器，常用于调试 Rust 程序。
+// request: "launch"：表示启动一个新的进程进行调试。
+// name: "Debug executable 'osgb_parser'"：调试配置的名称，在 VS Code 调试面板中显示。
+// cargo: 包含使用 cargo 命令构建项目的相关参数。
+// args: ["build", "--bin=osgb_parser", "--package=osgb_parser"]：传递给 cargo 命令的参数。build 表示构建项目，--bin=osgb_parser 指定要构建的二进制文件的名称，--package=osgb_parser 指定要构建的包的名称。
+// filter: 用于过滤要调试的目标。
+// name: "osgb_parser"：指定要调试的目标名称为 osgb_parser。
+// kind: "bin"：指定要调试的目标类型为二进制文件。
+// args: []：传递给可执行文件的命令行参数，这里为空。
+// cwd: "${workspaceFolder}"：指定调试时的工作目录为当前工作区的根目录
+{
+    "version": "0.2.0", 
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'osgb_parser'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=osgb_parser",
+                    "--package=osgb_parser"
+                ],
+                "filter": {
+                    "name": "osgb_parser",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'osgb_parser'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=osgb_parser",
+                    "--package=osgb_parser"
+                ],
+                "filter": {
+                    "name": "osgb_parser",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
