@@ -34,13 +34,34 @@ fn main() {
 
         // 编译 C++ 代码
         cc::Build::new()
-           .cpp(true)
+            .cpp(true)
+            .flag("-Zi")
+            .flag("-INCREMENTAL")
+            .flag("-bigobj")
+            .warnings(false)
+            .define("WIN32", None)
+            .define("_WINDOWS", None)
+            .include("cpp")
+            .include("./src")
+            .include("./vcpkg/installed/x64-windows/include")
+            .include("./vcpkg/installed/x64-windows-release/include")
+           //include将项目的 src 目录添加到编译器的包含路径中，这样编译器在查找头文件时会搜索该目录
+           //将 vcpkg 安装的库的头文件目录添加到编译器的包含路径中，确保编译器能够找到所需的头文件
            .compiler(cl_path)
-           .file("cpp/hello.cpp")
+           .file("cpp/osgb_parser.cpp")
            .flag("/EHsc")
            .compile("main");
+        println!("cargo:rustc-link-search=native=./vcpkg/installed/x64-windows-release/lib");
+        //告诉 Rust 编译器在 ./vcpkg/installed/x64-windows-release/lib 目录中搜索链接库文件
+        println!("cargo:rustc-link-lib=gdal");
+        println!("cargo:rustc-link-lib=osg");
+        println!("cargo:rustc-link-lib=osgDB");
+        println!("cargo:rustc-link-lib=osgUtil");
+        println!("cargo:rustc-link-lib=osgViewer");
+        println!("cargo:rustc-link-lib=OpenThreads");
+        //告诉 Rust 编译器链接指定的库文件，这里链接了 gdal、osg、osgDB、osgUtil、osgViewer 和 OpenThreads 等库
     } else {
         // 对于非 Windows 系统，可以添加其他编译器的配置，这里简单报错
         panic!("This build script is only configured for Windows with MSVC.");
     }
-}
+} 
