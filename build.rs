@@ -45,7 +45,7 @@ fn main() {
             .include("./src")
             .include("./vcpkg/installed/x64-windows/include")
             .include("./vcpkg/installed/x64-windows-release/include")
-           //include将项目的 src 目录添加到编译器的包含路径中，这样编译器在查找头文件时会搜索该目录
+           //include将项目的 src 目录添加到编译器的包含路径中，这样编译器在查找 头文件 时会搜索该目录
            //将 vcpkg 安装的库的头文件目录添加到编译器的包含路径中，确保编译器能够找到所需的头文件
            .compiler(cl_path)
            .file("cpp/osgb_parser.cpp")
@@ -60,6 +60,9 @@ fn main() {
         println!("cargo:rustc-link-lib=osgViewer");
         println!("cargo:rustc-link-lib=OpenThreads");
         //告诉 Rust 编译器链接指定的库文件，这里链接了 gdal、osg、osgDB、osgUtil、osgViewer 和 OpenThreads 等库
+        // 告诉 Rust 运行时需要包含插件目录
+        println!("cargo:rustc-env=OSG_LIBRARY_PATH=D:/studytrain/3d/3dtiles-master/3dtiles/vcpkg/installed/x64-windows-release/plugins/osgPlugins-3.6.5");
+        println!("cargo:rustc-env=PATH={};D:/studytrain/3d/3dtiles-master/3dtiles/vcpkg/installed/x64-windows-release/bin", env::var("PATH").unwrap());
     } else {
         // 对于非 Windows 系统，可以添加其他编译器的配置，这里简单报错
         panic!("This build script is only configured for Windows with MSVC.");
