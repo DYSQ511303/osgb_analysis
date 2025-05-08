@@ -1,0 +1,193 @@
+#Ascii Scene 
+#Version 161 
+#Generator OpenSceneGraph 3.6.5 
+
+osg::PagedLOD {
+  UniqueID 1 
+  CenterMode USER_DEFINED_CENTER 
+  UserCenter -161.298 -55.2614 1861.87 2.79703 
+  RangeMode PIXEL_SIZE_ON_SCREEN 
+  RangeList 2 {
+    0 44.7525 
+    44.7525 1e+30 
+  }
+  DatabasePath TRUE "osgbtest/" 
+  RangeDataList 2 {
+    "" 
+    "Tile_+000_+002_L20_00.osgb" 
+  }
+  PriorityList 2 {
+    0 1 
+    0 1 
+  }
+  Children 1 {
+    osg::Geode {
+      UniqueID 2 
+      Drawables 1 {
+        osg::Geometry {
+          UniqueID 3 
+          DataVariance STATIC 
+          StateSet TRUE {
+            osg::StateSet {
+              UniqueID 4 
+              DataVariance STATIC 
+              AttributeList 1 {
+                osg::Material {
+                  UniqueID 5 
+                  ColorMode DIFFUSE 
+                  Ambient TRUE Front 1 1 1 1 Back 1 1 1 1 
+                  Diffuse TRUE Front 1 1 1 1 Back 1 1 1 1 
+                  Specular TRUE Front 0 0 0 1 Back 0 0 0 1 
+                  Emission TRUE Front 0 0 0 1 Back 0 0 0 1 
+                  Shininess TRUE Front 0 Back 0 
+                }
+                Value OFF 
+              }
+              TextureModeList 1 {
+                Data 1 {
+                  GL_TEXTURE_2D ON 
+                }
+              }
+              TextureAttributeList 1 {
+                Data 1 {
+                  osg::Texture2D {
+                    UniqueID 6 
+                    DataVariance STATIC 
+                    WRAP_S CLAMP 
+                    WRAP_T CLAMP 
+                    WRAP_R CLAMP 
+                    MIN_FILTER LINEAR 
+                    MAG_FILTER LINEAR 
+                    UnRefImageDataAfterApply TRUE 
+                    Swizzle RGBA 
+                    Image TRUE {
+                      ClassName osg::Image 
+                      UniqueID 7 
+                      FileName "Tile_+000_+002_L19_0_0.jpg" 
+                      WriteHint 2 2 
+                      DataVariance STATIC 
+                    }
+                  }
+                  Value OFF 
+                }
+              }
+            }
+          }
+          PrimitiveSetList 1 {
+            osg::DrawElementsUInt {
+              UniqueID 8 
+              BufferObject TRUE {
+                osg::ElementBufferObject {
+                  UniqueID 9 
+                  Target 34963 
+                }
+              }
+              Mode TRIANGLES 
+              vector 57 {
+                9 20 8 28 
+                23 0 10 11 
+                18 5 9 8 
+                8 1 4 8 
+                20 1 3 14 
+                7 14 19 7 
+                16 15 17 27 
+                17 15 19 25 
+                17 12 27 15 
+                14 25 19 17 
+                27 19 21 24 
+                22 2 6 13 
+                25 14 13 25 
+                26 17 25 13 
+                6 
+              }
+            }
+          }
+          VertexArray TRUE {
+            osg::Vec3Array {
+              UniqueID 10 
+              BufferObject TRUE {
+                osg::VertexBufferObject {
+                  UniqueID 11 
+                }
+              }
+              Binding BIND_PER_VERTEX 
+              vector 29 {
+                -162.081 -53.8085 1861.16 
+                -161.299 -55.8304 1861.04 
+                -161.736 -53.326 1861.86 
+                -161.299 -56.311 1861.51 
+                -160.829 -54.3795 1860.56 
+                -160.735 -53.5165 1860.22 
+                -161.641 -53.3465 1862.34 
+                -161.299 -56.4922 1861.61 
+                -160.594 -54.025 1860.81 
+                -161.66 -53.7263 1861.55 
+                -160.735 -53.5165 1860.22 
+                -160.594 -54.025 1860.81 
+                -161.542 -57.1967 1862.45 
+                -161.66 -53.7263 1861.55 
+                -161.532 -56.0229 1861.51 
+                -161.517 -57.1967 1862.69 
+                -161.494 -56.5943 1863.51 
+                -161.524 -55.8859 1863.24 
+                -160.499 -53.6751 1860.58 
+                -161.502 -56.4924 1861.75 
+                -161.532 -56.0229 1861.51 
+                -161.66 -53.7263 1861.55 
+                -161.736 -53.326 1861.86 
+                -160.735 -53.5165 1860.22 
+                -162.081 -53.8085 1861.16 
+                -161.62 -53.816 1863.28 
+                -161.566 -55.5533 1863.63 
+                -161.533 -57.0821 1862.22 
+                -161.66 -53.7263 1861.55 
+              }
+            }
+          }
+          TexCoordArrayList 1 {
+            osg::Vec2Array {
+              UniqueID 12 
+              BufferObject TRUE {
+                osg::VertexBufferObject {
+                  UniqueID 11 
+                }
+              }
+              Binding BIND_PER_VERTEX 
+              vector 29 {
+                0.172913 0.433594 
+                0.377877 0.849533 
+                0.0783997 0.964844 
+                0.0351562 0.601981 
+                0.546534 0.927856 
+                0.646887 0.964844 
+                0.135071 0.961721 
+                0.047226 0.580137 
+                0.587654 0.922974 
+                0.622462 0.777954 
+                0.0351562 0.087326 
+                0.0527344 0.167969 
+                0.149811 0.496906 
+                0.0398254 0.916062 
+                0.0361176 0.638334 
+                0.178009 0.496733 
+                0.276749 0.569189 
+                0.24379 0.654789 
+                0.0645866 0.12439 
+                0.0644379 0.581527 
+                0.355469 0.790314 
+                0.787933 0.920538 
+                0.850189 0.964555 
+                0.0351562 0.231201 
+                0.714844 0.964844 
+                0.248413 0.904973 
+                0.291122 0.695173 
+                0.121399 0.51066 
+                0.229462 0.370539 
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -49,6 +49,7 @@ fn main() {
            //将 vcpkg 安装的库的头文件目录添加到编译器的包含路径中，确保编译器能够找到所需的头文件
            .compiler(cl_path)
            .file("cpp/osgb_parser.cpp")
+           .file("cpp/osg_tools.cpp")
            .flag("/EHsc")
            .compile("main");
         println!("cargo:rustc-link-search=native=./vcpkg/installed/x64-windows-release/lib");
