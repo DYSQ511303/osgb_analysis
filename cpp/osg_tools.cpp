@@ -28,8 +28,12 @@ const char* parse_osgb(const char* filepath) {
     // 收集几何信息
     osg::Geode* geode = node->asGeode();
     if (geode) {
-        unsigned int numDrawables = geode->getNumDrawables();
-        json << "\"numDrawables\":" << numDrawables << ",";
+       unsigned int numTriangles = 0;
+    for (unsigned int i = 0; i < geode->getNumDrawables(); ++i) {
+        osg::Geometry* geom = geode->getDrawable(i)->asGeometry();
+        if (geom) numTriangles += geom->getNumPrimitiveSets();
+    }
+    json << "\"numTriangles\":" << numTriangles << ",";
         
         // 可以添加更多几何信息收集逻辑
     }
